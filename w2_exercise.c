@@ -5,9 +5,8 @@ not that sum is itself prime.
 */
 #include <stdio.h>
 
-#define FMT_SUM "sum of primes is %d"
-#define FMT_PRIME " which is "
-#define PROMPT "Enter the number:\n"
+#define FMT_SUM "Sum of primes <= %d is %d, "
+#define FMT_PRIME "which is "
 
 int isprime(int n);
 int sum_primes(int n, int sum);
@@ -15,19 +14,18 @@ int sum_primes(int n, int sum);
 int main(int argc, char *argv[]){
     int num, sum;
 
-    printf(PROMPT);
     while (scanf("%d", &num)==1){
         // reset `sum` to 0
         sum = 0;
         sum = sum_primes(num, sum);
 
-        printf(FMT_SUM, sum);
+        printf(FMT_SUM, num, sum);
         if (isprime(sum)){
-            printf(FMT_PRIME "a prime");
+            printf(FMT_PRIME);
         }else{
-            printf(FMT_PRIME "not a prime");
+            printf(FMT_PRIME "not ");
         }
-        printf("\n\n");
+        printf("prime\n");
     }
 
     return 0;
@@ -39,6 +37,9 @@ int main(int argc, char *argv[]){
 int
 isprime(int n){
     int divisor;
+    if (n==0){
+        return 0;
+    }
     for (divisor=2; divisor*divisor<=n; divisor++){
         if (n%divisor==0){
             return 0;
@@ -53,9 +54,8 @@ sum_primes(int n, int sum){
     if (n>1){
         if (isprime(n)){
             return sum_primes(n-1, sum+n);
-        }else{
-            return sum_primes(n-1, sum);
         }
+        return sum_primes(n-1, sum);
     }
     return sum;
 }
