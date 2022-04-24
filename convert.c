@@ -10,7 +10,7 @@
 #define FIRST_ENCODE_NUM   31
 #define SECONDE_ENCODE_NUM 79
 
-#define DECODE_MODE 6
+#define DECODE_MODE 2
 
 #define PRINT_CHR "%c"
 #define PRINT_INT "%d"
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
     int c, fist_print = 1;
 
     if (argc == DECODE_MODE){
-        while ((c = getchar()) != '\0'){
+        while ((c = getchar()) != EOF){
             if (c >= FIRST_ENCODE_NUM - SECOND_BOUND &&
                 c <= FIRST_ENCODE_NUM - LOWER_BOUND){
                 c = FIRST_ENCODE_NUM - c;
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
                 c += SECONDE_ENCODE_NUM;
             }
             print_space(&fist_print);
-            printf(PRINT_INT, c);
+            printf(PRINT_CHR, c);
         }
         return 0;
     }
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
             c -= SECONDE_ENCODE_NUM;
         }
         print_space(&fist_print);
-        printf(PRINT_CHR, c);
+        printf(PRINT_INT, c);
     }
 
     return 0;
