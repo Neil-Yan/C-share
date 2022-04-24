@@ -19,7 +19,8 @@
 
 int main(int argc, char *argv[]){
     int c, fist_print = 1;
-    /* decode part, from int to char */
+    /* decode part, from int to char
+        inverse operation */
     if (argc == DECODE_MODE){
         /* continues as it not reach the end */
         while (scanf("%d", &c) == 1){
