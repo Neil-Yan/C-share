@@ -10,7 +10,7 @@
 #define FIRST_ENCODE_NUM   31
 #define SECONDE_ENCODE_NUM 79
 
-/* two argument for decode mode */
+/* use decode mode if two arguments */
 #define DECODE_MODE 2
 
 #define PRINT_CHR "%c"
