@@ -16,13 +16,11 @@
 #define PRINT_INT "%d"
 
 
-void print_space(int *fist_print);
-
-
 int main(int argc, char *argv[]){
     int c, fist_print = 1;
 
     if (argc == DECODE_MODE){
+        /* continues as it not reach the end */
         while ((c = getchar()) != EOF){
             if (c >= FIRST_ENCODE_NUM - SECOND_BOUND &&
                 c <= FIRST_ENCODE_NUM - LOWER_BOUND){
@@ -31,7 +29,15 @@ int main(int argc, char *argv[]){
                       c <= c - UPPER_BOUND){
                 c += SECONDE_ENCODE_NUM;
             }
-            print_space(&fist_print);
+
+            /* print a space after first char */
+            if (!fist_print){
+                printf(" ");
+            }else{
+                fist_print = 0;
+            }
+
+            /* the decode char */
             printf(PRINT_CHR, c);
         }
         return 0;
@@ -47,18 +53,17 @@ int main(int argc, char *argv[]){
         }else if (c >= THIRD_BOUND && c<= UPPER_BOUND){
             c -= SECONDE_ENCODE_NUM;
         }
-        print_space(&fist_print);
+
+        /* print a space after first char */
+        if (!fist_print){
+            printf(" ");
+        }else{
+            fist_print = 0;
+        }
+
+        /* the encode int */
         printf(PRINT_INT, c);
     }
 
     return 0;
-}
-
-/* if it is not first print, print a space */
-void print_space(int *fist_print){
-    if (!*fist_print){
-        printf(" ");
-    }else{
-        *fist_print = 0;
-    }
 }
