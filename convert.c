@@ -52,6 +52,17 @@ int main(int argc, char *argv[]){
         }else if (c >= THIRD_BOUND && c<= UPPER_BOUND){
             c -= SECONDE_ENCODE_NUM;
         }
+
+        /* 下面的else部分只会运行一次，且只在第一次运行。
+            因为开始我们将fist_print设为了YES，第一次运行时if部分的条件不满足。
+            会直接进入else部分，然后会将fist_print设为NO。
+
+            那么下次运行的时候会进入if部分，first_print就是等于NO了
+            因为满足了if的条件，将会print一个空格。
+
+            所以在第一次时，我们将不会print空格只会print一个数字。
+            在第一次之后将会print一个空格，再紧接着print一个数字。
+        */
         /* print a space after first integer */
         if (fist_print == NO){
             printf(" ");
@@ -59,6 +70,8 @@ int main(int argc, char *argv[]){
             /* first time the loop runs */
             fist_print = NO;
         }
+
+        /* 无论上面是什么，下面的printf都会运行 */
         /* the encode int */
         printf("%d", c);
     }
