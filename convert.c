@@ -56,6 +56,7 @@ int main(int argc, char *argv[]){
         if (fist_print == NO){
             printf(" ");
         }else{
+            /* first time the loop runs */
             fist_print = NO;
         }
         /* the encode int */
