@@ -13,9 +13,12 @@
 /* use decode mode if two arguments */
 #define DECODE_MODE 2
 
+#define YES 1
+#define NO  0
+
 
 int main(int argc, char *argv[]){
-    int c, fist_print = 1;
+    int c, fist_print = YES;
     /* decode part, from int to char
         inverse operation */
     if (argc == DECODE_MODE){
@@ -50,10 +53,10 @@ int main(int argc, char *argv[]){
             c -= SECONDE_ENCODE_NUM;
         }
         /* print a space after first integer */
-        if (!fist_print){
+        if (fist_print == NO){
             printf(" ");
         }else{
-            fist_print = 0;
+            fist_print = NO;
         }
         /* the encode int */
         printf("%d", c);
