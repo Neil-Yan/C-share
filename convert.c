@@ -13,9 +13,6 @@
 /* use decode mode if two arguments */
 #define DECODE_MODE 2
 
-#define PRINT_CHR "%c"
-#define PRINT_INT "%d"
-
 
 int main(int argc, char *argv[]){
     int c, fist_print = 1;
@@ -36,7 +33,7 @@ int main(int argc, char *argv[]){
                 c += SECONDE_ENCODE_NUM;
             }
             /* the decode char */
-            printf(PRINT_CHR, c);
+            printf("%c", c);
         }
         return 0;
     }
@@ -59,7 +56,7 @@ int main(int argc, char *argv[]){
             fist_print = 0;
         }
         /* the encode int */
-        printf(PRINT_INT, c);
+        printf("%d", c);
     }
 
     return 0;
