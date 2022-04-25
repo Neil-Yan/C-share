@@ -62,6 +62,12 @@ int main(int argc, char *argv[]){
 
             所以在第一次时，我们将不会print空格只会print一个数字。
             在第一次之后将会print一个空格，再紧接着print一个数字。
+
+            e.g. 5 25 26 36 -1 26 36 -1 18 -1 37 22 36 37 -15 -15 -15
+            第一次只print一个"5"
+                第二print" 25"
+                    第三print " 26"
+                        最后print " -15"
         */
         /* print a space after first integer */
         if (fist_print == NO){
