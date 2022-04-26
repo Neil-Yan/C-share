@@ -48,15 +48,16 @@ int main(int argc, char *argv[]){
     /* encode part, from char to int */
     /* loop continues, if c = '\n' or between the range */
     while ((c = getchar()) != EOF){
+        if (c == '\n'){
+            /* do nothing */
+        }
         /* 1st condition */
-        if (c >= LOWER_BOUND && c <= SECOND_BOUND){
+        else if (c >= LOWER_BOUND && c <= SECOND_BOUND){
             c = FIRST_ENCODE_NUM - c;
         /* 2nd condtion */
         }else if (c >= THIRD_BOUND && c<= UPPER_BOUND){
             c -= SECONDE_ENCODE_NUM;
         /* new line character, remains unchanged */
-        }else if (c == '\n'){
-            /* do nothing */
         }else{
             /* exit the program, if other characters */
             return 0;
