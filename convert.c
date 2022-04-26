@@ -24,11 +24,15 @@ int main(int argc, char *argv[]){
     if (argc == DECODE_MODE){
         /* continues as it not reach the end */
         while (scanf("%d", &c) == 1){
+            if (c == '\n'){
+                /* do nothing */
+            }
             /* FIRST_ENCODE_NUM - LOWER_BOUND   = 31 - 32 = -1 */
             /* FIRST_ENCODE_NUM - SECONDE_BOUND = 31 - 79 = -48 */
-            if (c >= FIRST_ENCODE_NUM - SECOND_BOUND &&
+            else if (c >= FIRST_ENCODE_NUM - SECOND_BOUND &&
                 c <= FIRST_ENCODE_NUM - LOWER_BOUND){
                 c = FIRST_ENCODE_NUM - c;
+
             /* THIRD_BOUND - SECONDE_ENCODE_NUM = 80 - 79  = 1*/
             /* UPPER_BOUND - SECONDE_ENCODE_NUM = 126 - 79 = 47*/
             }else if (c >= THIRD_BOUND - SECONDE_ENCODE_NUM &&
@@ -54,7 +58,7 @@ int main(int argc, char *argv[]){
         }else if (c == '\n'){
             /* do nothing */
         }else{
-            /* exit the program */
+            /* exit the program, if other characters */
             return 0;
         }
 
