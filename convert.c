@@ -13,12 +13,9 @@
 /* use decode mode if two arguments */
 #define DECODE_MODE 2
 
-#define YES 1
-#define NO  0
-
 
 int main(int argc, char *argv[]){
-    int c, fist_print = YES;
+    int c, fist_print = 1;
     /* decode part, from int to char
         inverse operation */
     if (argc == DECODE_MODE){
@@ -42,54 +39,53 @@ int main(int argc, char *argv[]){
             /* the decode char */
             printf("%c", c);
         }
-        return 0;
-    }
+    }else{
+        /* encode part, from char to int */
+        /* loop continues, if c = '\n' or between the range */
+        while ((c = getchar()) != EOF){
+            if (c == '\n'){
+                /* do nothing */
+            }
+            /* 1st condition */
+            else if (c >= LOWER_BOUND && c <= SECOND_BOUND){
+                c = FIRST_ENCODE_NUM - c;
+            /* 2nd condtion */
+            }else if (c >= THIRD_BOUND && c<= UPPER_BOUND){
+                c -= SECONDE_ENCODE_NUM;
+            /* new line character, remains unchanged */
+            }else{
+                /* exit the loop, if other characters */
+                break;
+            }
 
-    /* encode part, from char to int */
-    /* loop continues, if c = '\n' or between the range */
-    while ((c = getchar()) != EOF){
-        if (c == '\n'){
-            /* do nothing */
+            /* 下面的else部分只会运行一次，且只在第一次运行。
+                因为开始我们将fist_print设为了YES，第一次运行时if部分的条件不满足。
+                会直接进入else部分，然后会将fist_print设为NO。
+
+                那么下次运行的时候会进入if部分，first_print就是等于NO了
+                因为满足了if的条件，将会print一个空格。
+
+                所以在第一次时，我们将不会print空格只会print一个数字。
+                在第一次之后将会print一个空格，再紧接着print一个数字。
+
+                e.g. 5 25 26 36 -1 26 36 -1 18 -1 37 22 36 37 -15 -15 -15
+                第一次只print一个"5"
+                    第二print" 25"
+                        第三print " 26"
+                            最后print " -15"
+            */
+            /* print a space after first integer */
+            if (fist_print){
+                printf(" ");
+            }else{
+                /* first time the loop runs */
+                fist_print = 0;
+            }
+
+            /* 无论上面是什么，下面的printf都会运行 */
+            /* the encode int */
+            printf("%d", c);
         }
-        /* 1st condition */
-        else if (c >= LOWER_BOUND && c <= SECOND_BOUND){
-            c = FIRST_ENCODE_NUM - c;
-        /* 2nd condtion */
-        }else if (c >= THIRD_BOUND && c<= UPPER_BOUND){
-            c -= SECONDE_ENCODE_NUM;
-        /* new line character, remains unchanged */
-        }else{
-            /* exit the program, if other characters */
-            return 0;
-        }
-
-        /* 下面的else部分只会运行一次，且只在第一次运行。
-            因为开始我们将fist_print设为了YES，第一次运行时if部分的条件不满足。
-            会直接进入else部分，然后会将fist_print设为NO。
-
-            那么下次运行的时候会进入if部分，first_print就是等于NO了
-            因为满足了if的条件，将会print一个空格。
-
-            所以在第一次时，我们将不会print空格只会print一个数字。
-            在第一次之后将会print一个空格，再紧接着print一个数字。
-
-            e.g. 5 25 26 36 -1 26 36 -1 18 -1 37 22 36 37 -15 -15 -15
-            第一次只print一个"5"
-                第二print" 25"
-                    第三print " 26"
-                        最后print " -15"
-        */
-        /* print a space after first integer */
-        if (fist_print == NO){
-            printf(" ");
-        }else{
-            /* first time the loop runs */
-            fist_print = NO;
-        }
-
-        /* 无论上面是什么，下面的printf都会运行 */
-        /* the encode int */
-        printf("%d", c);
     }
 
     return 0;
