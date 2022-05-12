@@ -70,10 +70,12 @@ int guess_terms(){
 
     if(user_guess == guess_term){
         printf("OK!\n");
+        // make a correct guess
         return 1;
     }
 
     printf("no..\n");
 
+    // wrong answer
     return 0;
 }
