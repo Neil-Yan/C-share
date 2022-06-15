@@ -2,6 +2,7 @@
 
 int duplicates(const int a[], int n) {
     int i, j, k, find, dup_count = 0, print[n];
+
     /* initialise to zero */
     for (i = 0; i < n; i++) {
         print[i] = 0;
@@ -16,6 +17,7 @@ int duplicates(const int a[], int n) {
                 break;
             }
         }
+
         /* if it has not been printed before */
         if (find && !print[i]) {
             printf("%d ", a[i]);
