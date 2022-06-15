@@ -11,7 +11,8 @@ int duplicates(const int a[], int n) {
         find = 0;
         for (j = i + 1; j < n; j++) {
             /* find the same value */
-            if ((find = (a[i] == a[j]))) {
+            if (a[i] == a[j]) {
+                find = 1;
                 break;
             }
         }
@@ -27,8 +28,8 @@ int duplicates(const int a[], int n) {
             }
         }
     }
-
     printf("\n");
+
     return dup_count;
 }
 
