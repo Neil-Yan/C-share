@@ -6,7 +6,7 @@ void title(const char str[]) {
         /* 1st character of a word */
         if (capitalised && str[i] != ' ' && str[i] >= 'a' && str[i] <= 'z') {
             capitalised = 0;
-            printf("%c", str[i] - ('a' - 'A'));
+            printf("%c", str[i] - 'a' + 'A');
             /* Space then move to next word */
         } else if (str[i] == ' ') {
             printf(" ");
