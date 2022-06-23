@@ -4,7 +4,7 @@ void title(const char str[]) {
     int i = 0, capitalised = 1;
     while (str[i] != '\0') {
         /* 1st character of a word */
-        if (capitalised && str[i] != ' ') {
+        if (capitalised && str[i] != ' ' && str[i] >= 'a' && str[i] <= 'z') {
             capitalised = 0;
             printf("%c", str[i] - ('a' - 'A'));
             /* Space then move to next word */
