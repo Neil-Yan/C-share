@@ -3,15 +3,15 @@
 void title(const char str[]) {
     int i = 0, capitalised = 1;
     while (str[i] != '\0') {
-        /* 1st character */
+        /* 1st character of a word */
         if (capitalised && str[i] != ' ') {
             capitalised = 0;
             printf("%c", str[i] - ('a' - 'A'));
-            /* Space */
+            /* Space then move to next word */
         } else if (str[i] == ' ') {
             printf(" ");
             capitalised = 1;
-            /* Other character */
+            /* Other character in a word */
         } else {
             printf("%c", str[i]);
         }
