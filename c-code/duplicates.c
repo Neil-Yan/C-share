@@ -36,7 +36,7 @@ int duplicates(const int a[], int n) {
 }
 
 int main(int argc, char *argv[]) {
-    int A[] = {3, 7, 8, 9, 2, 0, 3, 0, 0};
+    int A[] = {1, 2, 3, 4, 5, 6, 7, 8};
     printf("%d\n", duplicates(A, sizeof(A) / sizeof(*A)));
 
     return 0;
