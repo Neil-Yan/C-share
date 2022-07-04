@@ -4,14 +4,14 @@
 
 ## Cursor Moving
 - #### move cursor to front / end of the word
-> CTRL + Left / Right arrow
+> CTRL + &larr; / &rarr;
 
 - #### go to line number
 > CTRL + G
 
 - #### select texts
 select character by character
-> SHIFT + Left / Right arrow
+> SHIFT + &larr; / &rarr;
 
 select the line by line below the cursor
 > CTRL + L
@@ -25,10 +25,10 @@ select same word next (muti-line editing)
 
 - #### move texts
 move line up or down
-> ALT + Up / Down arrow
+> ALT + &uarr; / &darr;
 
 copy & move
-> ALT + SHIFT + Up / Down arrow
+> ALT + SHIFT + &uarr; / &darr;
 
 ## Toggle Comments
 > CTRL + /
@@ -41,4 +41,4 @@ Clear terminal
 > CTRL + K
 
 Move word by word
-> CTRL + L / R arrow
+> CTRL + &larr; / &rarr;
