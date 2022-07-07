@@ -27,7 +27,7 @@
 - #### Length of an array
   - `numbers.length;`
   > :memo: **Note:** 
-  > 1. array has ==fixed== size 
+  > 1. array has ***fixed*** size 
   > 2. **.length** has no parenthesis
 
 ## `import java.util.Arrays;`
@@ -55,10 +55,10 @@
 
 - #### Declare a float
   - `float pi = 3.14F;`
-  - NOTE: float has suffix =='F'==
+  - NOTE: float has suffix ***'F'***
 - #### Declare a constant
   - `final float PI = 3.14F;`
-  - NOTE: constant name shoule be ==uppercased==
+  - NOTE: constant name shoule be ***uppercased***
 - #### Convert string to number
   1. to Integer
      - `Interger.parseInt("150");`
@@ -116,10 +116,10 @@
       - ```java
         String name = scanner.next();
         ```
-      - input: Jackie Chan -> output: ==Jackie==
+      - input: Jackie Chan -> output: ***Jackie***
   2. read string per line
       - `String name = scanner.nextLine();`
-      - - input: Jackie Chan -> output: ==Jackie Chan==
+      - - input: Jackie Chan -> output: ***Jackie Chan***
 
 > :memo: **Note:** `scanner.close()`, is a good practice to close the scanner
 
