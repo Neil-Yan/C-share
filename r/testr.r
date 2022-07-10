@@ -39,22 +39,25 @@ simulator <- function(pdata, pmatrix, year) {
   return(simulation_result)
 }
 
-# condition
+# create a new list
+new_benefit_22 <- c()
+
+# add new elements into column 
 for (person in 1:num_of_person) {
   if (pdata[person, "benefit_21"] == "UB" & 
       pdata[person, "benefit_22"] == "UB") {
-            person[person, "new_benefit_22"] = "UB2"
-    
+            new_benefit_22.append(new_benefit_22, "UB2")
   } else if ((pdata[person, "benefit_21"] == "UB" & 
               pdata[person, "benefit_22"] != "UB") | 
              (pdata[person, "benefit_21"] != "UB" & 
               pdata[person, "benefit_22"] == "UB")) {
-            person[person, "new_benefit_22"] = "UB"
+            new_benefit_22.append(new_benefit_22, "UB")
   } else {
-            person[person, "new_benefit_22"] = person[person, "benefit_22"]
-
+            new_benefit_22.append(new_benefit_22, pdata[person, "benefit_22"])
   }
 }
+
+pdata["new_benefit_22"] <- new_benefit_22
 
 # 5 years simulations
 #for (year in 1:5) {
