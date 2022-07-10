@@ -46,14 +46,14 @@ new_benefit_22 <- c()
 for (person in 1:num_of_person) {
   if (pdata[person, "benefit_21"] == "UB" & 
       pdata[person, "benefit_22"] == "UB") {
-            new_benefit_22.append(new_benefit_22, "UB2")
+            new_benefit_22 <- append(new_benefit_22, "UB2")
   } else if ((pdata[person, "benefit_21"] == "UB" & 
               pdata[person, "benefit_22"] != "UB") | 
              (pdata[person, "benefit_21"] != "UB" & 
               pdata[person, "benefit_22"] == "UB")) {
-            new_benefit_22.append(new_benefit_22, "UB")
+            new_benefit_22 <- append(new_benefit_22, "UB")
   } else {
-            new_benefit_22.append(new_benefit_22, pdata[person, "benefit_22"])
+            new_benefit_22 <- append(new_benefit_22, pdata[person, "benefit_22"])
   }
 }
 
