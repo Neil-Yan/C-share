@@ -1,44 +1,45 @@
+# VS code Manual
+
 ## Open vscode in terminal
+
 > `code .` # open current directory
-> `code somefile.js` # open file
+> `code test.c` # open file
 
 ## Cursor Moving
-- #### move cursor to front / end of the word
-> CTRL + &larr; / &rarr;
 
-- #### go to line number
-> CTRL + G
+- move cursor to front / end of the word
+    > CTRL + &larr; / &rarr;
+- go to line number
+    > CTRL + G
 
-- #### select texts
-select character by character
-> SHIFT + &larr; / &rarr;
+## Select Texts
 
-select the line by line below the cursor
-> CTRL + L
+- select character by character
+  > SHIFT + &larr; / &rarr;
+- select the line by line below the cursor
+  > CTRL + L
+- select mutiple lines
+  > ALT + CLICK
+- select same word next (muti-line editing)
+  > CTRL + D
 
-- #### muti-line
-select mutiple lines 
-> ALT + CLICK 
+## Move Texts
 
-select same word next (muti-line editing)
-> CTRL + D 
-
-- #### move texts
-move line up or down
-> ALT + &uarr; / &darr;
-
-copy & move
-> ALT + SHIFT + &uarr; / &darr;
+- move line up or down
+    > ALT + &uarr; / &darr;
+- copy & move
+    > ALT + SHIFT + &uarr; / &darr;
 
 ## Toggle Comments
-> CTRL + /
+
+- `// single line comment`
+    > CTRL + /
+- `/* muti-line comment */`
+    > SHIFT + ALT + A:
 
 ## Terminal
-Toggle terminal
-> CTRL + `
 
-Clear terminal
-> CTRL + K
-
-Move word by word
-> CTRL + &larr; / &rarr;
+- Toggle terminal
+    > CTRL + `
+- Move word by word
+    > CTRL + &larr; / &rarr;
